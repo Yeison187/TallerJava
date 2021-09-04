@@ -1,7 +1,8 @@
 import java.sql.SQLOutput;
+import java.util.Locale;
 import java.util.Scanner;
 
-public class ejercicios {
+public class ejercicios extends DatoValido {
 
     public String numeroMayor(double numero, double numero2) {
         String mensaje = "";
@@ -45,13 +46,93 @@ public class ejercicios {
         }
     }
 
-    public void esCero(Scanner entrada){
-        String numero = "";
+    public void esCero(Scanner entrada) {
+
+        double numero = 0;
         do {
-            System.out.println("Digite un numero ");
-            numero = entrada.nextLine();
 
+            numero = solicitarNumero(entrada);
+            if (numero == 0) {
+                System.out.println("El número digitado es igual a cero");
+            } else if (numero > 0) {
+                System.out.println("El numero es mayor a cero");
+            } else {
+                System.out.println("El numero es menor a cero");
+            }
 
-        } while(true);
+        } while (numero < 0);
     }
+
+    public boolean diaLaboral(String diaSemana) {
+        switch (diaSemana.toLowerCase()) {
+            case "sabado": {
+                System.out.println("Es sabado alegre :), no se trabaja");
+                break;
+            }
+            case "domingo": {
+                System.out.println("Domingo de paseo, no se trabaja :) :)");
+                break;
+            }
+
+            case "lunes": {
+                System.out.println("Los lunes, se trabaja con actitud");
+                break;
+            }
+            case "martes": {
+                System.out.println("Los martes , trabajan con alegria:) :)");
+                break;
+            }
+
+            case "miercoles": {
+                System.out.println("Los miercoles, trabajando con mucho amor ");
+                break;
+            }
+            case "jueves": {
+                System.out.println("Los jueves, se labora con todo el combo");
+                break;
+            }
+
+            case "viernes": {
+                System.out.println("Los viernes, la rompemos");
+                break;
+            }
+
+
+            default:
+                System.out.println("Algo salio mal, te enviare al menú principal. ");
+                System.out.println("Quizas se apunto mal el dia de la semana");
+
+                break;
+
+
+        }
+        return true;
+    }
+
+    public String reemplazarAporE(){
+        String frase = "La sonrisa sera la mejor arma contra la tristeza, ";
+        return frase.replace("a","e");
+    }
+
+    public int contarVocal(String cadena, char vocal){
+        int contador = 0;
+        char aux;
+        String frase = cadena.toLowerCase();
+        for (int i = 0;  i < cadena.length(); i++){
+            aux = frase.charAt(i);
+            if(aux == vocal){
+                contador++;
+            }
+
+        }
+        return contador;
+    }
+
+    public boolean isEqualCadena(String cadena1, String cadena2){
+        if (cadena1.equals(cadena1)){
+            return true;
+        }
+        return false;
+    }
+
 }

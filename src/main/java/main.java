@@ -10,8 +10,10 @@ public class main {
 
         while (true) {
             datoValido.menu();
+            System.out.println(" ");
             System.out.print("Digite un numero, según el item a consultar: ");
             opcionMenu = entrada.nextLine();
+            System.out.println(" ");
 
             if (datoValido.isInt(opcionMenu)) {
                 opcionMenu = datoValido.deleteSpace(opcionMenu);
@@ -29,7 +31,7 @@ public class main {
 
                         double numero2 = datoValido.solicitarNumero(entrada);
 
-                        System.out.println(ejercicio.numeroMayor(numero1,numero2));
+                        System.out.println(ejercicio.numeroMayor(numero1, numero2));
 
                         break;
 
@@ -54,17 +56,74 @@ public class main {
 
 
                     case "7":
+                        ejercicio.esCero(entrada);
                         break;
 
                     case "8":
+                        System.out.print("Digite el dia de la semana: ");
+                        String diaSemana = entrada.nextLine();
+                        ejercicio.diaLaboral(diaSemana);
+
                         break;
 
                     case "9":
 
+                        System.out.println("Digite una frase");
+                        String frase = entrada.nextLine();
+                        System.out.println((ejercicio.reemplazarAporE()).concat(frase));
                         break;
 
                     case "10":
-                         break;
+                        System.out.print("Digite una frase: ");
+                        String cadena = entrada.nextLine();
+                        System.out.println("Frase sin espacios: " + datoValido.deleteSpace(cadena));
+                        break;
+
+                    case "11":
+                        System.out.print("Digite una frase: ");
+                        String cadena2 = entrada.nextLine();
+                        System.out.println("El tamaño de la frase contando los espacios es: " + cadena2.length());
+                        System.out.println("La vocal 'a' se repite: " + ejercicio.contarVocal(cadena2,'a'));
+                        System.out.println("La vocal 'e' se repite: " + ejercicio.contarVocal(cadena2,'e'));
+                        System.out.println("La vocal 'i' se repite: " + ejercicio.contarVocal(cadena2,'i'));
+                        System.out.println("La vocal 'o' se repite: " + ejercicio.contarVocal(cadena2,'o'));
+                        System.out.println("La vocal 'u' se repite: " + ejercicio.contarVocal(cadena2,'u'));
+
+
+                        break;
+
+                    case "12":
+
+                        System.out.print("Digite una frase: ");
+                        String cadenaUno = entrada.nextLine();
+                        System.out.print("Digite otra frase: ");
+                        String cadenaDos = entrada.nextLine();
+                        System.out.println("Son iguales: "+ejercicio.isEqualCadena(cadenaUno,cadenaDos));
+                        break;
+
+                    case "13":
+
+                        break;
+
+
+                    case "14":
+
+                        break;
+
+
+                    case "15":
+                        break;
+
+                    case "16":
+                        break;
+
+                    case "17":
+                        break;
+
+                    case "18":
+                        break;
+
+
                     default:
                         System.out.println("Opción no valida, recuerda que los item validos son de 0 y 18");
                         break;

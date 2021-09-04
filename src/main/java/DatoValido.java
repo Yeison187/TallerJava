@@ -46,6 +46,9 @@ public class DatoValido {
         System.out.println("10. Eliminar espacios de frase insertada por consola");
         System.out.println("11. longitud de frase, cantidad vocales tiene de “a,e,i,o,u”.");
         System.out.println("12. Cadenas iguales ? sino, diferencias.");
+        System.out.println("13. Fecha actual, formato (AAAA/MM/DD) (HH:MM:SS)");
+        System.out.println("14. Imprima por pantalla el numero introducido hasta 1000 con saldos de 2 en 2.");
+        System.out.println("15. Gestión cinematografica");
 
     }
 

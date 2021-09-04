@@ -102,16 +102,21 @@ public class main {
                         break;
 
                     case "13":
-
+                        System.out.print("Fecha actual: ");
+                        ejercicio.mostrarFechaActual();
                         break;
 
 
                     case "14":
+                        double number = datoValido.solicitarNumero(entrada);
+                        System.out.println("El mensaje esta en una pequeña ventana, minimiza y ve el resultado");
+                        ejercicio.imprimirNumerosConSalto(number);
 
                         break;
 
 
                     case "15":
+                        ejercicio.getionCinematografica(entrada);
                         break;
 
                     case "16":

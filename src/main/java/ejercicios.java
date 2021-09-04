@@ -1,4 +1,8 @@
+import javax.swing.*;
 import java.sql.SQLOutput;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -133,6 +137,49 @@ public class ejercicios extends DatoValido {
             return true;
         }
         return false;
+    }
+
+    public void mostrarFechaActual(){
+        LocalDate dia = LocalDate.now();
+        LocalTime hora = LocalTime.now();
+        System.out.println(dia +" " +hora);
+
+    }
+
+    public void imprimirNumerosConSalto(double numero) {
+    int aux = (int)numero;
+    String mensaje = "";
+
+    for (int i = aux; i <= 1000; i+=2){
+        mensaje = mensaje.concat(i + " - ");
+
+        if (i % 50 == 0 || (i-1) % 50 == 0){
+            mensaje = mensaje.concat(" \n ");
+        }
+
+    }
+        JOptionPane.showMessageDialog(null, mensaje);
+    }
+
+    public  void getionCinematografica(Scanner entrada){
+        int aux = 0;
+        do {
+            System.out.println("****** GESTION CINEMATOGRÁFICA ********\n" +
+                    "1-NUEVO ACTOR\n" +
+                    "2-BUSCAR ACTOR\n" +
+                    "3-ELIMINAR ACTOR\n" +
+                    "4-MODIFICAR ACTOR\n" +
+                    "5-VER TODOS LOS ACTORES\n" +
+                    "6- VER PELICULAS DE LOS ACTORES\n" +
+                    "7-VER CATEGORIA DE LAS PELICULAS DE LOS ACTORES\n" +
+                    "8-SALIR");
+
+            aux = (int)solicitarNumero(entrada);
+            if (aux < 1 || aux > 8){
+                System.out.println("OPCIÓN INCORRECTA. Recuerda que solo son validos los numeros del 1 al 8");
+            }
+        }while (aux != 8 );
+
     }
 
 }

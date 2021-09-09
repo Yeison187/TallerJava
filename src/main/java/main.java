@@ -83,11 +83,11 @@ public class main {
                         System.out.print("Digite una frase: ");
                         String cadena2 = entrada.nextLine();
                         System.out.println("El tamaño de la frase contando los espacios es: " + cadena2.length());
-                        System.out.println("La vocal 'a' se repite: " + ejercicio.contarVocal(cadena2,'a'));
-                        System.out.println("La vocal 'e' se repite: " + ejercicio.contarVocal(cadena2,'e'));
-                        System.out.println("La vocal 'i' se repite: " + ejercicio.contarVocal(cadena2,'i'));
-                        System.out.println("La vocal 'o' se repite: " + ejercicio.contarVocal(cadena2,'o'));
-                        System.out.println("La vocal 'u' se repite: " + ejercicio.contarVocal(cadena2,'u'));
+                        System.out.println("La vocal 'a' se repite: " + ejercicio.contarVocal(cadena2, 'a'));
+                        System.out.println("La vocal 'e' se repite: " + ejercicio.contarVocal(cadena2, 'e'));
+                        System.out.println("La vocal 'i' se repite: " + ejercicio.contarVocal(cadena2, 'i'));
+                        System.out.println("La vocal 'o' se repite: " + ejercicio.contarVocal(cadena2, 'o'));
+                        System.out.println("La vocal 'u' se repite: " + ejercicio.contarVocal(cadena2, 'u'));
 
 
                         break;
@@ -98,7 +98,7 @@ public class main {
                         String cadenaUno = entrada.nextLine();
                         System.out.print("Digite otra frase: ");
                         String cadenaDos = entrada.nextLine();
-                        System.out.println("Son iguales: "+ejercicio.isEqualCadena(cadenaUno,cadenaDos));
+                        System.out.println("Son iguales: " + ejercicio.isEqualCadena(cadenaUno, cadenaDos));
                         break;
 
                     case "13":
@@ -120,6 +120,50 @@ public class main {
                         break;
 
                     case "16":
+                        System.out.println("Digite su nombre ");
+                        String nombre = entrada.nextLine();
+                        System.out.println("Digite su edad ");
+                        int edad = (int) datoValido.solicitarNumero(entrada);
+                        System.out.println(" Digite la letra segun su sexo: M en caso de ser mujer y H de ser hombre");
+                        char sexo = entrada.nextLine().toUpperCase().charAt(0);
+                        System.out.println(" Digite su peso ");
+                        double peso = datoValido.solicitarNumero(entrada);
+                        System.out.println(" Digite su altura ");
+                        double altura = datoValido.solicitarNumero(entrada);
+
+                        Persona contructorUno = new Persona(nombre, edad, sexo, peso, altura);
+                        Persona contructorDos = new Persona(nombre, edad, sexo);
+                        Persona contructorTres = new Persona();
+
+                        contructorTres.setEdad(edad);
+                        contructorTres.setNombre(nombre);
+                        contructorTres.setPeso(peso);
+                        contructorTres.setAltura(altura);
+                        contructorTres.setSexo(sexo);
+
+                        contructorDos.setPeso(peso);
+                        contructorDos.setAltura(altura);
+
+                        byte IMC1 = contructorTres.calcularIMC();
+                        byte IMC2 = contructorDos.calcularIMC();
+                        byte IMC3 = contructorUno.calcularIMC();
+
+                        if (IMC1 == -1 && IMC2 == -1 && IMC3 == -1) {
+                            System.out.println("Tiene peso ideal");
+                        } else if (IMC1 == 0 && IMC2 == 0 && IMC3 == 0) {
+                            System.out.println("Esta por debajo del peso ideal");
+                        } else if (IMC1 == 1 && IMC2 == 1 && IMC3 == 1) {
+                            System.out.println("Esta por encima del peso ideal");
+                        }
+
+
+                        System.out.println("Este es el toString del primer objeto: "
+                                +contructorTres.mostarObjesto(contructorUno));
+                        System.out.println("Este es el toString del segundo objeto: "
+                                +contructorTres.mostarObjesto(contructorDos));
+                        System.out.println("Este es el toString del tercer objeto: "
+                                +contructorTres.mostarObjesto(contructorTres));
+
                         break;
 
                     case "17":

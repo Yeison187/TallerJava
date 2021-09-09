@@ -63,7 +63,7 @@ public class Electrodomestico {
     }
 
     public double precioFinal() {
-        return precioPorConsumo() + precioPorTamaño();
+               return (precioPorConsumo() + precioPorTamaño() + this.preciBase);
     }
 
     public int precioPorConsumo() {

@@ -158,15 +158,44 @@ public class main {
 
 
                         System.out.println("Este es el toString del primer objeto: "
-                                +contructorTres.mostarObjesto(contructorUno));
+                                + contructorTres.mostarObjesto(contructorUno));
                         System.out.println("Este es el toString del segundo objeto: "
-                                +contructorTres.mostarObjesto(contructorDos));
+                                + contructorTres.mostarObjesto(contructorDos));
                         System.out.println("Este es el toString del tercer objeto: "
-                                +contructorTres.mostarObjesto(contructorTres));
+                                + contructorTres.mostarObjesto(contructorTres));
 
                         break;
 
                     case "17":
+                        Electrodomestico arrayObjetos[] = new Electrodomestico[10];
+
+                        arrayObjetos[0] = new Television(40,false);
+                        arrayObjetos[1] = new Television(30,true);
+                        arrayObjetos[2] = new Television(50,true);
+                        arrayObjetos[3] = new Television(30,false);
+                        arrayObjetos[4] = new Television();
+                        arrayObjetos[5] = new Lavadora(30);
+                        arrayObjetos[6] = new Lavadora(40);
+                        arrayObjetos[7] = new Lavadora(20);
+                        arrayObjetos[8] = new Lavadora();
+                        arrayObjetos[9] = new Lavadora();
+
+                        double total = 0;
+                        double totalTv = 0;
+                        double totalLavadoras = 0;
+                        for (int i = 0; i < arrayObjetos.length; i++) {
+                            total += arrayObjetos[i].precioFinal();
+                                      if (arrayObjetos[i].getClass().getName() == "Television"){
+                                          totalTv += arrayObjetos[i].precioFinal();
+                                      }else if(arrayObjetos[i].getClass().getName() == "Lavadora"){
+                                          totalLavadoras += arrayObjetos[i].precioFinal();
+                                      }
+
+                        }
+                        System.out.println("Total en lavadoras " + totalLavadoras);
+                        System.out.println("Total en TV " + totalTv);
+                        System.out.println("Total entre TV y Lavadoras "+total);
+
                         break;
 
                     case "18":

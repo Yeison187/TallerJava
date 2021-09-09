@@ -50,6 +50,7 @@ public class DatoValido {
         System.out.println("14. Imprima por pantalla el numero introducido hasta 1000 con saldos de 2 en 2.");
         System.out.println("15. Gestión cinematografica");
         System.out.println("16. Clase llamada persona");
+        System.out.println("17. Superclase llamada Electrodoméstico");
 
     }
 

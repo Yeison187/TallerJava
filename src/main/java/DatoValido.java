@@ -51,6 +51,7 @@ public class DatoValido {
         System.out.println("15. Gestión cinematografica");
         System.out.println("16. Clase llamada persona");
         System.out.println("17. Superclase llamada Electrodoméstico");
+        System.out.println("18. Clase llamada Serie");
 
     }
 

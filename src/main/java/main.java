@@ -199,6 +199,42 @@ public class main {
                         break;
 
                     case "18":
+                        Entregable series[] = new Serie[5];
+                        Entregable videoJuego[] = new Videojuego[5];
+                        series [0] = new Serie();
+                        series [1] = new Serie();
+                        series [2] = new Serie();
+                        series [3] = new Serie();
+                        series [4] = new Serie();
+                        videoJuego[0] = new Videojuego();
+                        videoJuego[1] = new Videojuego();
+                        videoJuego[2] = new Videojuego();
+                        videoJuego[3] = new Videojuego();
+                        videoJuego[4] = new Videojuego();
+
+                        videoJuego[0].entregar();
+                        videoJuego[1].entregar();
+                        series[0].entregar();
+                        series[4].entregar();
+                        int contadorVideojuego = 0;
+                        int contadorSeries = 0;
+                        for (int i = 0; i < videoJuego.length; i++) {
+                            if (videoJuego[i].isEntregado()){
+                                videoJuego[i].devolver();
+                                contadorVideojuego++;
+                            }
+                            if (series[i].isEntregado()){
+                                series[i].devolver();
+                                contadorSeries++;
+                            }
+                        }
+
+                        System.out.println("Se devolvieron "+ contadorVideojuego +" videojuegos");
+                        System.out.println("Se devolvieron "+ contadorSeries+" series");
+
+
+
+
                         break;
 
 

@@ -1,66 +1,91 @@
-public class Serie {
-    String título;
+public class Serie implements Entregable {
+    String titulo;
     int numeroTemporadas;
     boolean entregado;
     String genero;
     String creador;
 
-    public Serie(){
+    public Serie() {
         this.numeroTemporadas = 3;
         this.entregado = false;
         this.genero = "";
         this.creador = "";
-        this.título = "";
+        this.titulo = "";
     }
-    public Serie(String titulo, String creador){
+
+    public Serie(String titulo, String creador) {
         this.numeroTemporadas = 3;
         this.entregado = false;
         this.genero = "";
         this.creador = creador;
-        this.título = titulo;
+        this.titulo = titulo;
     }
-    public Serie(String titulo, String creador, String genero,int numeroTemporadas ){
+
+    public Serie(String titulo, String creador, String genero, int numeroTemporadas) {
         this.numeroTemporadas = numeroTemporadas;
         this.entregado = false;
         this.genero = genero;
         this.creador = creador;
-        this.título = titulo;
+        this.titulo = titulo;
     }
 
-    public int getNumeroTemporadas(){
+    public int getNumeroTemporadas() {
         return this.numeroTemporadas;
     }
-    public String getGenero(){
+
+    public String getGenero() {
         return this.genero;
     }
 
-    public String getCreador(){
+    public String getCreador() {
         return this.creador;
     }
-    public String getTítulo(){
-        return this.título;
+
+    public String getTítulo() {
+        return this.titulo;
     }
 
-    public void setNumeroTemporadas(int numeroTemporadas){
+    public void setNumeroTemporadas(int numeroTemporadas) {
         this.numeroTemporadas = numeroTemporadas;
     }
-    public void setGenero(String genero){
+
+    public void setGenero(String genero) {
         this.genero = genero;
     }
 
-    public void setCreador(String creador){
-         this.creador = creador;
+    public void setCreador(String creador) {
+        this.creador = creador;
     }
-    public void setTítulo(String título){
-        this.título = título;
+
+    public void setTítulo(String título) {
+        this.titulo = título;
     }
+
     @Override
     public String toString() {
-        return "Título:" + this.título  + "- Creador:" + this.creador;
+        return "Título:" + this.titulo + "- Creador:" + this.creador;
     }
 
+    @Override
+    public void entregar() {
+        this.entregado = true;
+    }
 
+    @Override
+    public void devolver() {
+        this.entregado = false;
+    }
 
+    @Override
+    public Boolean isEntregado() {
+        return this.entregado;
+    }
 
+    @Override
+    public int compareTo(Object a) {
+        int estado = -1;
+
+        return estado;
+    }
 
 }
